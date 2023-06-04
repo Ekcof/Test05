@@ -1,5 +1,4 @@
 # Test Task
-# Ga
 
 *Author: Algis Khasanov* 
 
