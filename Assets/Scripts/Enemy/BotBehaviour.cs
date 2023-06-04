@@ -14,6 +14,8 @@ public class BotBehaviour : MonoBehaviour
 
     private float speed = 10f;
 
+    private string helloAnimationName;
+    private float helloDelay = 3.5f;
     private NavMeshAgent agent;
     private GameObject player;
     private bool isMoving;
@@ -41,6 +43,8 @@ public class BotBehaviour : MonoBehaviour
             hp = maxHp;
         speed = data.Speed;
         agent.speed = speed;
+        helloAnimationName = data.HelloAnimationName;
+        helloDelay = data.HelloDelay;
     }
 
     private async void StartMovement()
@@ -48,15 +52,21 @@ public class BotBehaviour : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Hello");
 
-        await Task.Delay(3100);
+        await Task.Delay((int)(helloDelay * 1000));
+        if (gameObject == null)
+            return;
+
         isMoving = true;
 
         if (animator != null)
             animator.SetBool("Run", true);
+
         while (isMoving)
         {
             MoveToPlayerDestinationAsync();
             await Task.Delay(200);
+            if (gameObject == null)
+                return;
         }
     }
 
@@ -86,6 +96,8 @@ public class BotBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
+        cancelToken.SetCanceled();
+
         if (!isDead)
             Die();
     }

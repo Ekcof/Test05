@@ -46,4 +46,6 @@ public class EnemyParams
     public string Id;
     public int HealthPoints;
     public float Speed;
+    public string HelloAnimationName;
+    public float HelloDelay;
 }
