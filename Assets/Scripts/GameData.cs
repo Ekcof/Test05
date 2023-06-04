@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// Хранит в себе данные о характеристиках игрока и врагов
+/// Stores the data about player and enemy prefabs
 /// </summary>
 [CreateAssetMenu(fileName = "Game Data", menuName = "Assets/Game Data")]
 public class GameData : ScriptableObject

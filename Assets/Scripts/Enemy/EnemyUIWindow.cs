@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Отвечает за отображение количества врагов в UI кратного 10
+/// Responsible for showing enemies count in UI
 /// </summary>
 public class EnemyUIWindow : MonoBehaviour
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Хранит в себе события для их вызова
+/// Stores the events for interaction among classes
 /// </summary>
 public static class EventsBus
 {

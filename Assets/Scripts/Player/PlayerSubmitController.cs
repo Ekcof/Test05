@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Отвечает за контроль инпута кроме движения игрока
+/// Responsible for player's input controls
 /// </summary>
 public class PlayerSubmitController : MonoBehaviour
 {

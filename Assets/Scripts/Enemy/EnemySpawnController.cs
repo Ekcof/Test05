@@ -5,7 +5,7 @@ using System;
 using Random = UnityEngine.Random;
 
 /// <summary>
-/// Отвечает за контроль спауна и удаления врагов со сцены
+/// Responsible for spawning and destroying of enemies
 /// </summary>
 public class EnemySpawnController : MonoBehaviour
 {

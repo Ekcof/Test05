@@ -2,9 +2,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-
+/// <summary>
+/// Responsible for movement of enemy
+/// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
-
 public class BotBehaviour : MonoBehaviour
 {
     [SerializeField] private float deletionDelay = 5f;
@@ -44,17 +45,18 @@ public class BotBehaviour : MonoBehaviour
 
     private async void StartMovement()
     {
-        isMoving = true;
-        animator.SetTrigger("Hello");
+        if (animator != null)
+            animator.SetTrigger("Hello");
 
         await Task.Delay(3100);
+        isMoving = true;
 
         if (animator != null)
             animator.SetBool("Run", true);
         while (isMoving)
         {
             MoveToPlayerDestinationAsync();
-            await Task.Delay(200); // Ожидание 0.2 секунды перед обновлением точки назначения
+            await Task.Delay(200);
         }
     }
 
@@ -62,26 +64,6 @@ public class BotBehaviour : MonoBehaviour
     {
         Vector3 destination = player.transform.position;
         agent.SetDestination(destination);
-    }
-
-    private async Task CheckDestinationReached(TaskCompletionSource<bool> tcs)
-    {
-        while (true)
-        {
-            await Task.Yield();
-
-            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-            {
-                tcs.SetResult(true);
-                return;
-            }
-
-            if (!isMoving)
-            {
-                tcs.SetCanceled();
-                return;
-            }
-        }
     }
 
     public void StopMovement()

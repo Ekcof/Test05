@@ -15,7 +15,12 @@
       "ProjectGuid": "59c49c51-2b43-157a-7c49-d3201a1c437a",
       "DisplayName": "NavMeshComponents",
       "ColorIndex": 1
+    },
+    "6b92202d-592c-3930-637f-88a0e8799644": {
+      "ProjectGuid": "6b92202d-592c-3930-637f-88a0e8799644",
+      "DisplayName": "Assembly-CSharp.Player",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

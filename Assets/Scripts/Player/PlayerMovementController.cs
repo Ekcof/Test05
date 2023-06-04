@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Отвечает только за контроль движения игрока
+/// Responsible only for player's movement
 /// </summary>
 public class PlayerMovementController : MonoBehaviour
 {
